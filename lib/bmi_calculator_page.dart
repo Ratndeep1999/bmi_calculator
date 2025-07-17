@@ -8,7 +8,11 @@ class BmiCalculatorPage extends StatefulWidget {
 }
 
 class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
-  double _height = 181;
+  double _height = 55;
+
+  int _weight = 0;
+
+  int _age = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -172,6 +176,53 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.yellowAccent,
+                      ),
+                      child: Column(
+                        children: [
+                          const Text("WEIGHT"),
+                          Text(_weight.toString()),
+                          // row for increment and decrement buttons
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              // Increment button
+                              Container(
+                                height: MediaQuery.of(context).size.height * 0.06,
+                                width: MediaQuery.of(context).size.width * 0.12,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(50),
+                                  color: Colors.white,
+                                ),
+                                child: InkWell(
+                                  onTap: () {},
+                                  child: Icon(
+                                    Icons.add,
+                                    size: 35,
+                                    color: Colors.black26,
+                                  ),
+                                ),
+                              ),
+
+                              // Decrement button
+                              Container(
+                                height: MediaQuery.of(context).size.height * 0.06,
+                                width: MediaQuery.of(context).size.width * 0.12,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(50),
+                                  color: Colors.white,
+                                ),
+                                child: InkWell(
+                                  onTap: () {},
+                                  child: Icon(
+                                    Icons.remove,
+                                    size: 35,
+                                    color: Colors.black26,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                   ),
