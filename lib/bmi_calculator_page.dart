@@ -376,12 +376,14 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                 onTap: () {
 
                   setState(() {
+                    
                     // cm to meter
                     double heightInMeter = _height / 100 ;
                     // calculate bmi
-                    if(_weight > 0 && _age > 0 ) {
-                      _calculatedBmi = _weight / heightInMeter * heightInMeter ;
+                    if( _weight > 0.00 && _age > 0 ) {
+                      _calculatedBmi = _weight / (heightInMeter * heightInMeter) ;
                     }
+                    
                   });
 
                 },
@@ -415,7 +417,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                 ),
                 child: Center(
                   child: Text(
-                    _calculatedBmi.toStringAsFixed(1),
+                    _calculatedBmi.toStringAsFixed(2),
                     style: TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.w400,
