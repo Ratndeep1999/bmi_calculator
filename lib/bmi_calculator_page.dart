@@ -176,7 +176,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                     ),
                   ),
 
-                  SizedBox(width: 15,),
+                  SizedBox(width: 15),
 
                   // Age Section
                   Expanded(
@@ -191,6 +191,17 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                 ],
               ),
 
+              SizedBox(height: 30),
+
+              // Calculate Button
+              Container(
+                height: MediaQuery.of(context).size.height * 0.07,
+                width: MediaQuery.of(context).size.width * 0.8,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.yellowAccent,
+                ),
+              ),
             ],
           ),
         ),
