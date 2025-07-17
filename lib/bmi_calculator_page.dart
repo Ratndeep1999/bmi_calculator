@@ -9,10 +9,9 @@ class BmiCalculatorPage extends StatefulWidget {
 
 class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
   double _height = 55;
-
   int _weight = 64;
-
   int _age = 21;
+  int _gender = 1 ;  // for male = 1 and female = 2
 
   @override
   Widget build(BuildContext context) {
@@ -35,30 +34,39 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                 children: [
                   // Male container
                   Expanded(
-                    child: Container(
-                      height: MediaQuery.of(context).size.height * 0.20,
-                      width: MediaQuery.of(context).size.width * 0.10,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.yellowAccent,
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.male,
-                            size: 100,
-                            color: Colors.blue.shade500,
-                          ),
-                          const Text(
-                            "Male",
-                            style: TextStyle(
-                              color: Colors.black26,
-                              fontSize: 20,
-                              fontWeight: FontWeight.w800,
+                    child: InkWell(
+                      onTap: () {
+                        setState(() {
+                          _gender = 1 ;
+                        });
+                      },
+                      child: Container(
+                        height: MediaQuery.of(context).size.height * 0.20,
+                        width: MediaQuery.of(context).size.width * 0.10,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+
+                          // gender male
+                          color: _gender == 1 ? Colors.white : Colors.yellowAccent,
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.male,
+                              size: 100,
+                              color: Colors.blue.shade500,
                             ),
-                          ),
-                        ],
+                            const Text(
+                              "Male",
+                              style: TextStyle(
+                                color: Colors.black26,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -67,30 +75,37 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
 
                   // Female container
                   Expanded(
-                    child: Container(
-                      height: MediaQuery.of(context).size.height * 0.20,
-                      width: MediaQuery.of(context).size.width * 0.10,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.yellowAccent,
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.female,
-                            size: 100,
-                            color: Colors.pink.shade500,
-                          ),
-                          const Text(
-                            "Female",
-                            style: TextStyle(
-                              color: Colors.black26,
-                              fontSize: 20,
-                              fontWeight: FontWeight.w800,
+                    child: InkWell(
+                      onTap: () {
+                        setState(() {
+                          _gender = 2 ;
+                        });
+                      },
+                      child: Container(
+                        height: MediaQuery.of(context).size.height * 0.20,
+                        width: MediaQuery.of(context).size.width * 0.10,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: _gender == 2 ? Colors.white : Colors.yellowAccent,
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.female,
+                              size: 100,
+                              color: Colors.pink.shade500,
                             ),
-                          ),
-                        ],
+                            const Text(
+                              "Female",
+                              style: TextStyle(
+                                color: Colors.black26,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -168,6 +183,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
               // Row for Weight and Age
               Row(
                 children: [
+
                   // Weight Section
                   Expanded(
                     child: Container(
