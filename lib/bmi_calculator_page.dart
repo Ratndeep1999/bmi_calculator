@@ -194,12 +194,25 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
               SizedBox(height: 30),
 
               // Calculate Button
-              Container(
-                height: MediaQuery.of(context).size.height * 0.07,
-                width: MediaQuery.of(context).size.width * 0.8,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.yellowAccent,
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  height: MediaQuery.of(context).size.height * 0.07,
+                  width: MediaQuery.of(context).size.width * 0.6,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.yellowAccent,
+                  ),
+                  child: Center(
+                    child: Text(
+                      "Calculate",
+                      style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.black26,
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ],
