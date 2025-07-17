@@ -17,6 +17,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [Icon(Icons.dark_mode)],
         leading: Icon(Icons.menu),
         centerTitle: true,
         title: Text("BMI Calculator", style: TextStyle()),
@@ -384,3 +385,4 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
     );
   }
 }
+ 
