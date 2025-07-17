@@ -10,9 +10,9 @@ class BmiCalculatorPage extends StatefulWidget {
 class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
   double _height = 55;
 
-  int _weight = 0;
+  int _weight = 64;
 
-  int _age = 0;
+  int _age = 21;
 
   @override
   Widget build(BuildContext context) {
@@ -178,16 +178,30 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                         color: Colors.yellowAccent,
                       ),
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Text("WEIGHT"),
-                          Text(_weight.toString()),
+                          const Text(
+                            "WEIGHT",
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.black26,
+                            ),
+                          ),
+                          Text(
+                            _weight.toString(),
+                            style: TextStyle(
+                              fontSize: 50,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
                           // row for increment and decrement buttons
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               // Increment button
                               Container(
-                                height: MediaQuery.of(context).size.height * 0.06,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.06,
                                 width: MediaQuery.of(context).size.width * 0.12,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(50),
@@ -205,7 +219,8 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
 
                               // Decrement button
                               Container(
-                                height: MediaQuery.of(context).size.height * 0.06,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.06,
                                 width: MediaQuery.of(context).size.width * 0.12,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(50),
@@ -236,6 +251,68 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.yellowAccent,
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text(
+                            "AGE",
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.black26,
+                            ),
+                          ),
+                          Text(
+                            _age.toString(),
+                            style: TextStyle(
+                              fontSize: 50,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          // row for increment and decrement buttons
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              // Increment button
+                              Container(
+                                height:
+                                MediaQuery.of(context).size.height * 0.06,
+                                width: MediaQuery.of(context).size.width * 0.12,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(50),
+                                  color: Colors.white,
+                                ),
+                                child: InkWell(
+                                  onTap: () {},
+                                  child: Icon(
+                                    Icons.add,
+                                    size: 35,
+                                    color: Colors.black26,
+                                  ),
+                                ),
+                              ),
+
+                              // Decrement button
+                              Container(
+                                height:
+                                MediaQuery.of(context).size.height * 0.06,
+                                width: MediaQuery.of(context).size.width * 0.12,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(50),
+                                  color: Colors.white,
+                                ),
+                                child: InkWell(
+                                  onTap: () {},
+                                  child: Icon(
+                                    Icons.remove,
+                                    size: 35,
+                                    color: Colors.black26,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                   ),
