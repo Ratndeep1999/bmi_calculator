@@ -30,6 +30,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
             padding: const EdgeInsets.only(right: 20),
             child: InkWell(
               onTap: () {},
+              // Dark mode
               child: Icon(Icons.dark_mode, size: 25),
             ),
           ),
