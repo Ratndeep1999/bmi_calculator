@@ -34,7 +34,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                       width: MediaQuery.of(context).size.width * 0.10,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: Colors.grey.shade300,
+                        color: Colors.yellowAccent,
                       ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -42,7 +42,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                           Icon(
                             Icons.male,
                             size: 100,
-                            color: Colors.blue.shade100,
+                            color: Colors.blue.shade500,
                           ),
                           Text(
                             "Male",
@@ -66,7 +66,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                       width: MediaQuery.of(context).size.width * 0.10,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: Colors.grey.shade300,
+                        color: Colors.yellowAccent,
                       ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -74,7 +74,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                           Icon(
                             Icons.female,
                             size: 100,
-                            color: Colors.pink.shade100,
+                            color: Colors.pink.shade500,
                           ),
                           Text(
                             "Female",
