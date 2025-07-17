@@ -154,9 +154,8 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                       thumbColor: Colors.grey[100],
                       onChanged: (double value) {
                         // _height need to change
-                        _height = value;
                         setState(() {
-                          print("$_height");
+                          _height = value;
                         });
                       },
                     ),
