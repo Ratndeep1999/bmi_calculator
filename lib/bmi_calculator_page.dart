@@ -8,6 +8,9 @@ class BmiCalculatorPage extends StatefulWidget {
 }
 
 class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
+
+  double _height = 181 ;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,8 +33,14 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                   // Male container
                   Expanded(
                     child: Container(
-                      height: MediaQuery.of(context).size.height * 0.20,
-                      width: MediaQuery.of(context).size.width * 0.10,
+                      height: MediaQuery
+                          .of(context)
+                          .size
+                          .height * 0.20,
+                      width: MediaQuery
+                          .of(context)
+                          .size
+                          .width * 0.10,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.yellowAccent,
@@ -62,8 +71,14 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                   // Female container
                   Expanded(
                     child: Container(
-                      height: MediaQuery.of(context).size.height * 0.20,
-                      width: MediaQuery.of(context).size.width * 0.10,
+                      height: MediaQuery
+                          .of(context)
+                          .size
+                          .height * 0.20,
+                      width: MediaQuery
+                          .of(context)
+                          .size
+                          .width * 0.10,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.yellowAccent,
@@ -94,16 +109,31 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
               SizedBox(height: 20,),
 
               // Height Section
-              Container(
-                height: MediaQuery.of(context).size.height * 0.20,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.yellowAccent,
-                ),
-                child: Column(
-                  children: [
-
-                  ],
+              Expanded(
+                child: Container(
+                  height: MediaQuery
+                      .of(context)
+                      .size
+                      .height * 0.20,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.yellowAccent,
+                  ),
+                  child: Column(
+                    children: [
+                      Text("HEIGHT"),
+                      Text("181 cm"),
+                      Slider(value: _height,
+                        min: 55,
+                        max: 200,
+                        onChanged: (double value) {
+                          _height = value ;
+                          setState(() {
+                            print("$_height");
+                          });
+                        },),
+                    ],
+                  ),
                 ),
               ),
             ],
