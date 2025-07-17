@@ -11,13 +11,24 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
   double _height = 55;
   int _weight = 64;
   int _age = 21;
-  int _gender = 1 ;  // for male = 1 and female = 2
+  int _gender = 1; // for male = 1 and female = 2
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [Icon(Icons.dark_mode)],
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: InkWell(
+              onTap: () {},
+              child: Icon(
+                  Icons.dark_mode,
+                size: 25,
+              ),
+            ),
+          ),
+        ],
         leading: Icon(Icons.menu),
         centerTitle: true,
         title: Text("BMI Calculator", style: TextStyle()),
@@ -38,7 +49,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                     child: InkWell(
                       onTap: () {
                         setState(() {
-                          _gender = 1 ;
+                          _gender = 1;
                         });
                       },
                       child: Container(
@@ -48,7 +59,8 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                           borderRadius: BorderRadius.circular(20),
 
                           // gender male
-                          color: _gender == 1 ? Colors.white : Colors.yellowAccent,
+                          color:
+                              _gender == 1 ? Colors.white : Colors.yellowAccent,
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -79,7 +91,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                     child: InkWell(
                       onTap: () {
                         setState(() {
-                          _gender = 2 ;
+                          _gender = 2;
                         });
                       },
                       child: Container(
@@ -87,7 +99,8 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                         width: MediaQuery.of(context).size.width * 0.10,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: _gender == 2 ? Colors.white : Colors.yellowAccent,
+                          color:
+                              _gender == 2 ? Colors.white : Colors.yellowAccent,
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -184,7 +197,6 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
               // Row for Weight and Age
               Row(
                 children: [
-
                   // Weight Section
                   Expanded(
                     child: Container(
@@ -226,7 +238,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                                 child: InkWell(
                                   onTap: () {
                                     setState(() {
-                                      _weight = _weight + 1 ;
+                                      _weight = _weight + 1;
                                     });
                                   },
                                   child: Icon(
@@ -249,7 +261,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                                 child: InkWell(
                                   onTap: () {
                                     setState(() {
-                                      _weight = _weight - 1 ;
+                                      _weight = _weight - 1;
                                     });
                                   },
                                   child: Icon(
@@ -301,7 +313,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                               // Increment button
                               Container(
                                 height:
-                                MediaQuery.of(context).size.height * 0.06,
+                                    MediaQuery.of(context).size.height * 0.06,
                                 width: MediaQuery.of(context).size.width * 0.12,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(50),
@@ -309,10 +321,8 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                                 ),
                                 child: InkWell(
                                   onTap: () {
-                                    _age++ ;
-                                    setState(() {
-
-                                    });
+                                    _age++;
+                                    setState(() {});
                                   },
                                   child: Icon(
                                     Icons.add,
@@ -325,7 +335,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                               // Decrement button
                               Container(
                                 height:
-                                MediaQuery.of(context).size.height * 0.06,
+                                    MediaQuery.of(context).size.height * 0.06,
                                 width: MediaQuery.of(context).size.width * 0.12,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(50),
@@ -334,7 +344,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                                 child: InkWell(
                                   onTap: () {
                                     setState(() {
-                                      _age-- ;
+                                      _age--;
                                     });
                                   },
                                   onLongPress: () {},
@@ -385,4 +395,3 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
     );
   }
 }
- 
