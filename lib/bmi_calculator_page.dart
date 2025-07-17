@@ -14,7 +14,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
       appBar: AppBar(
         leading: Icon(Icons.menu),
         centerTitle: true,
-        title: Text("Counter App", style: TextStyle()),
+        title: Text("BMI Calculator", style: TextStyle()),
         backgroundColor: Colors.orange.shade100,
       ),
       body: SafeArea(
@@ -89,6 +89,22 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                     ),
                   ),
                 ],
+              ),
+
+              SizedBox(height: 20,),
+
+              // Height Section
+              Container(
+                height: MediaQuery.of(context).size.height * 0.20,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.yellowAccent,
+                ),
+                child: Column(
+                  children: [
+
+                  ],
+                ),
               ),
             ],
           ),
