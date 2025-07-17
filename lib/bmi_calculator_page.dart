@@ -374,16 +374,16 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
               // Calculate Button
               InkWell(
                 onTap: () {
-                  // cm to meter
-                  double heightInMeter = _height / 100 ;
 
-                  // calculate bmi
-                  if(_weight > 0 && _age > 0 ) {
-                    _calculatedBmi = _weight / heightInMeter * heightInMeter ;
-                  }
                   setState(() {
-
+                    // cm to meter
+                    double heightInMeter = _height / 100 ;
+                    // calculate bmi
+                    if(_weight > 0 && _age > 0 ) {
+                      _calculatedBmi = _weight / heightInMeter * heightInMeter ;
+                    }
                   });
+
                 },
                 child: Container(
                   height: MediaQuery.of(context).size.height * 0.07,
@@ -415,7 +415,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                 ),
                 child: Center(
                   child: Text(
-                    _calculatedBmi.toStringAsFixed(2),
+                    _calculatedBmi.toStringAsFixed(1),
                     style: TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.w400,
