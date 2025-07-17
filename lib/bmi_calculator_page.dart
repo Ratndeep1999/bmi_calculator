@@ -14,6 +14,13 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
   int _gender = 1; // for male = 1 and female = 2
   double? _calculatedBmi ;
 
+
+  // Method to calculate BMI
+  double _calculateBmi() {
+
+    return _calculateBmi();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -207,7 +214,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Text(
-                            "WEIGHT",
+                            "WEIGHT (in Kg)",
                             style: TextStyle(
                               fontSize: 18,
                               color: Colors.black26,
@@ -290,7 +297,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Text(
-                            "AGE",
+                            "AGE (in Years)",
                             style: TextStyle(
                               fontSize: 18,
                               color: Colors.black26,
