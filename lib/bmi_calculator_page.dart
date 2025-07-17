@@ -115,7 +115,6 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                     Text.rich(
                       TextSpan(
                         children: [
-
                           // Text to show Height
                           TextSpan(
                             text: _height.toStringAsFixed(2),
@@ -137,11 +136,20 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                         ],
                       ),
                     ),
+
+                    // Slider
                     Slider(
+                      // value that i need to pass
                       value: _height,
+                      // minimum value
                       min: 55,
+                      // maximum value
                       max: 200,
+                      inactiveColor: Colors.white,
+                      activeColor: Colors.black26,
+                      thumbColor: Colors.grey[100],
                       onChanged: (double value) {
+                        // _height need to change
                         _height = value;
                         setState(() {
                           print("$_height");
@@ -152,20 +160,37 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                 ),
               ),
 
-              Text.rich(
-                TextSpan(
-                  children: [
-                    TextSpan(
-                      text: 'Big ',
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
+              SizedBox(height: 20),
+
+              // Row for Weight and Age
+              Row(
+                children: [
+                  // Weight Section
+                  Expanded(
+                    child: Container(
+                      height: MediaQuery.of(context).size.height * 0.25,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.yellowAccent,
                       ),
                     ),
-                    TextSpan(text: 'Small', style: TextStyle(fontSize: 14)),
-                  ],
-                ),
+                  ),
+
+                  SizedBox(width: 15,),
+
+                  // Age Section
+                  Expanded(
+                    child: Container(
+                      height: MediaQuery.of(context).size.height * 0.25,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.yellowAccent,
+                      ),
+                    ),
+                  ),
+                ],
               ),
+
             ],
           ),
         ),
