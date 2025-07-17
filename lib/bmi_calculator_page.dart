@@ -12,6 +12,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
   int _weight = 64;
   int _age = 21;
   int _gender = 1; // for male = 1 and female = 2
+  double? _calculatedBmi ;
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +23,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
             padding: const EdgeInsets.only(right: 20),
             child: InkWell(
               onTap: () {},
-              child: Icon(
-                  Icons.dark_mode,
-                size: 25,
-              ),
+              child: Icon(Icons.dark_mode, size: 25),
             ),
           ),
         ],
@@ -364,7 +362,8 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                 ],
               ),
 
-              SizedBox(height: 30),
+              // SizedBox(height: 30),
+              SizedBox(height: 10),
 
               // Calculate Button
               InkWell(
@@ -384,6 +383,25 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                         fontWeight: FontWeight.w400,
                         color: Colors.black26,
                       ),
+                    ),
+                  ),
+                ),
+              ),
+
+              // Result
+              Container(
+                height: MediaQuery.of(context).size.height * 0.07,
+                width: MediaQuery.of(context).size.width * 0.6,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.yellowAccent,
+                ),
+                child: Center(
+                  child: Text(
+                    "$_calculatedBmi",
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
                 ),
