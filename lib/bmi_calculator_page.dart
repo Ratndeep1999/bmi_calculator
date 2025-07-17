@@ -208,7 +208,11 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                                   color: Colors.white,
                                 ),
                                 child: InkWell(
-                                  onTap: () {},
+                                  onTap: () {
+                                    setState(() {
+                                      _weight = _weight + 1 ;
+                                    });
+                                  },
                                   child: Icon(
                                     Icons.add,
                                     size: 35,
@@ -227,7 +231,11 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                                   color: Colors.white,
                                 ),
                                 child: InkWell(
-                                  onTap: () {},
+                                  onTap: () {
+                                    setState(() {
+                                      _weight = _weight - 1 ;
+                                    });
+                                  },
                                   child: Icon(
                                     Icons.remove,
                                     size: 35,
@@ -269,6 +277,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                               fontWeight: FontWeight.w400,
                             ),
                           ),
+
                           // row for increment and decrement buttons
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -283,7 +292,12 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                                   color: Colors.white,
                                 ),
                                 child: InkWell(
-                                  onTap: () {},
+                                  onTap: () {
+                                    _age++ ;
+                                    setState(() {
+
+                                    });
+                                  },
                                   child: Icon(
                                     Icons.add,
                                     size: 35,
@@ -302,7 +316,12 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                                   color: Colors.white,
                                 ),
                                 child: InkWell(
-                                  onTap: () {},
+                                  onTap: () {
+                                    setState(() {
+                                      _age-- ;
+                                    });
+                                  },
+                                  onLongPress: () {},
                                   child: Icon(
                                     Icons.remove,
                                     size: 35,
