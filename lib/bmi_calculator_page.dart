@@ -242,6 +242,9 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                                   onClick: () {
                                     print("Weight Increase");
                                     _weight = _weight + 1;
+                                    setState(() {
+
+                                    });
                                   },
                                 ),
                               ),
