@@ -197,7 +197,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
               // Row for Weight and Age
               Row(
                 children: [
-                  // Weight Section
+                  /// Weight Section
                   Expanded(
                     child: Container(
                       height: MediaQuery.of(context).size.height * 0.25,
@@ -236,15 +236,13 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                                   color: Colors.white,
                                 ),
                                 child:
-                                // Weight Increment
+                                /// Weight Increment
                                 IncDecButtonWidget(
                                   isIncrement: true,
                                   onClick: () {
                                     print("Weight Increase");
                                     _weight = _weight + 1;
-                                    setState(() {
-
-                                    });
+                                    setState(() {});
                                   },
                                 ),
                               ),
@@ -259,18 +257,14 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                                   color: Colors.white,
                                 ),
                                 child:
-                                // Weight decrement
-                                InkWell(
-                                  onTap: () {
-                                    //   if(_weight > 0) {
-                                    //     _weight = _weight - 1;
-                                    //  }
+                                /// Weight decrement
+                                IncDecButtonWidget(
+                                  isIncrement: false,
+                                  onClick: () {
+                                    print("Weight Decrease");
+                                    _weight = _weight - 1;
+                                    setState(() {});
                                   },
-                                  child: Icon(
-                                    Icons.remove,
-                                    size: 35,
-                                    color: Colors.black26,
-                                  ),
                                 ),
                               ),
                             ],
@@ -322,17 +316,14 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                                   color: Colors.white,
                                 ),
                                 child:
-                                // age Increment
-                                InkWell(
-                                  onTap: () {
-                                    _age++;
+                                /// Age Increment
+                                IncDecButtonWidget(
+                                  isIncrement: true,
+                                  onClick: () {
+                                    print("Age Increase");
+                                    _age++ ;
                                     setState(() {});
                                   },
-                                  child: Icon(
-                                    Icons.add,
-                                    size: 35,
-                                    color: Colors.black26,
-                                  ),
                                 ),
                               ),
 
@@ -346,20 +337,14 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                                   color: Colors.white,
                                 ),
                                 child:
-                                // // age decrement
-                                InkWell(
-                                  onTap: () {
-                                    if (_age > 0) {
-                                      _age--;
-                                    }
+                                /// Age Decrement
+                                IncDecButtonWidget(
+                                  isIncrement: false,
+                                  onClick: () {
+                                    print("Age Decrease");
+                                    _age-- ;
                                     setState(() {});
                                   },
-                                  onLongPress: () {},
-                                  child: Icon(
-                                    Icons.remove,
-                                    size: 35,
-                                    color: Colors.black26,
-                                  ),
                                 ),
                               ),
                             ],
