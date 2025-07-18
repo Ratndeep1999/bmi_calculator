@@ -12,12 +12,14 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
   double _height = 55;
   int _weight = 64;
   int _age = 21;
-  int _gender = 1; // for male = 1 and female = 2
+  int _gender = 0 ;
+
   double _calculatedBmi = 0.0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.yellow[100],
       appBar: AppBar(
         actions: [
           Padding(
@@ -48,9 +50,8 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                   Expanded(
                     child: InkWell(
                       onTap: () {
-                        setState(() {
-                          _gender = 1;
-                        });
+                        _gender = 1;
+                        setState(() {});
                       },
                       child: Container(
                         height: MediaQuery.of(context).size.height * 0.20,
@@ -58,7 +59,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
 
-                          // gender male
+                          // color condition for gender
                           color:
                               _gender == 1 ? Colors.white : Colors.yellowAccent,
                         ),
@@ -70,7 +71,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                               size: 100,
                               color: Colors.blue.shade500,
                             ),
-                            const Text(
+                            Text(
                               "Male",
                               style: TextStyle(
                                 color: Colors.black26,
@@ -90,15 +91,16 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                   Expanded(
                     child: InkWell(
                       onTap: () {
-                        setState(() {
-                          _gender = 2;
-                        });
+                        _gender = 2;
+                        setState(() {});
                       },
                       child: Container(
                         height: MediaQuery.of(context).size.height * 0.20,
                         width: MediaQuery.of(context).size.width * 0.10,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
+
+                          // color condition for gender
                           color:
                               _gender == 2 ? Colors.white : Colors.yellowAccent,
                         ),
@@ -108,9 +110,9 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                             Icon(
                               Icons.female,
                               size: 100,
-                              color: Colors.pink.shade500,
+                              color: Colors.blue.shade500,
                             ),
-                            const Text(
+                            Text(
                               "Female",
                               style: TextStyle(
                                 color: Colors.black26,
@@ -321,7 +323,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                                   isIncrement: true,
                                   onClick: () {
                                     print("Age Increase");
-                                    _age++ ;
+                                    _age++;
                                     setState(() {});
                                   },
                                 ),
@@ -342,7 +344,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                                   isIncrement: false,
                                   onClick: () {
                                     print("Age Decrease");
-                                    _age-- ;
+                                    _age--;
                                     setState(() {});
                                   },
                                 ),
