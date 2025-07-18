@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/Widgets/inc_dec_button_widget.dart';
 import 'package:flutter/material.dart';
 
 class BmiCalculatorPage extends StatefulWidget {
@@ -12,9 +13,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
   int _weight = 64;
   int _age = 21;
   int _gender = 1; // for male = 1 and female = 2
-  double _calculatedBmi = 0.0 ;
-
-
+  double _calculatedBmi = 0.0;
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +86,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
 
                   SizedBox(width: 15),
 
-                  // Female container
+                  // Female Container
                   Expanded(
                     child: InkWell(
                       onTap: () {
@@ -236,17 +235,14 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                                   borderRadius: BorderRadius.circular(50),
                                   color: Colors.white,
                                 ),
-                                child: InkWell(
-                                  onTap: () {
-
+                                child:
+                                // Weight Increment
+                                IncDecButtonWidget(
+                                  isIncrement: true,
+                                  onClick: () {
+                                    print("Weight Increase");
                                     _weight = _weight + 1;
-                                    setState(() {});
                                   },
-                                  child: Icon(
-                                    Icons.add,
-                                    size: 35,
-                                    color: Colors.black26,
-                                  ),
                                 ),
                               ),
 
@@ -259,12 +255,13 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                                   borderRadius: BorderRadius.circular(50),
                                   color: Colors.white,
                                 ),
-                                child: InkWell(
+                                child:
+                                // Weight decrement
+                                InkWell(
                                   onTap: () {
-                                    if(_weight > 0) {
-                                      _weight = _weight - 1;
-                                    }
-                                    setState(() {});
+                                    //   if(_weight > 0) {
+                                    //     _weight = _weight - 1;
+                                    //  }
                                   },
                                   child: Icon(
                                     Icons.remove,
@@ -321,7 +318,9 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                                   borderRadius: BorderRadius.circular(50),
                                   color: Colors.white,
                                 ),
-                                child: InkWell(
+                                child:
+                                // age Increment
+                                InkWell(
                                   onTap: () {
                                     _age++;
                                     setState(() {});
@@ -343,11 +342,12 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                                   borderRadius: BorderRadius.circular(50),
                                   color: Colors.white,
                                 ),
-                                child: InkWell(
+                                child:
+                                // // age decrement
+                                InkWell(
                                   onTap: () {
-
-                                    if ( _age > 0) {
-                                      _age-- ;
+                                    if (_age > 0) {
+                                      _age--;
                                     }
                                     setState(() {});
                                   },
@@ -374,18 +374,15 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
               // Calculate Button
               InkWell(
                 onTap: () {
-
                   setState(() {
-                    
                     // cm to meter
-                    double heightInMeter = _height / 100 ;
+                    double heightInMeter = _height / 100;
                     // calculate bmi
-                    if( _weight > 0.00 && _age > 0 ) {
-                      _calculatedBmi = _weight / (heightInMeter * heightInMeter) ;
+                    if (_weight > 0.00 && _age > 0) {
+                      _calculatedBmi =
+                          _weight / (heightInMeter * heightInMeter);
                     }
-                    
                   });
-
                 },
                 child: Container(
                   height: MediaQuery.of(context).size.height * 0.07,
@@ -418,10 +415,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                 child: Center(
                   child: Text(
                     _calculatedBmi.toStringAsFixed(2),
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.w400,
-                    ),
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.w400),
                   ),
                 ),
               ),
