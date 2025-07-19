@@ -1,7 +1,6 @@
-import 'package:bmi_calculator/Widgets/inc_dec_button_widget.dart';
+import 'package:bmi_calculator/Widgets/select_gender_widget.dart';
 import 'package:bmi_calculator/Widgets/weight_age_widget.dart';
 import 'package:flutter/material.dart';
-
 import 'Widgets/calculated_bmi_result_widget.dart';
 
 class BmiCalculatorPage extends StatefulWidget {
@@ -15,8 +14,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
   double _height = 55;
   int _weight = 64;
   int _age = 21;
-  int _gender = 0;
-
+  int _gender = 0 ; // 1 for male and 2 for female
   double _calculatedBmi = 0.0;
 
   @override
@@ -39,94 +37,38 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
         title: Text("BMI Calculator", style: TextStyle()),
         backgroundColor: Colors.yellowAccent,
       ),
+
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15),
           child: Column(
             children: [
               SizedBox(height: 15),
-
               // Gender Section
               Row(
                 children: [
                   // Male container
-                  Expanded(
-                    child: InkWell(
-                      onTap: () {
-                        _gender = 1;
-                        setState(() {});
-                      },
-                      child: Container(
-                        height: MediaQuery.of(context).size.height * 0.20,
-                        width: MediaQuery.of(context).size.width * 0.10,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-
-                          // color condition for gender
-                          color:
-                              _gender == 1 ? Colors.white : Colors.yellowAccent,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.male,
-                              size: 100,
-                              color: Colors.blueAccent,
-                            ),
-                            Text(
-                              "Male",
-                              style: TextStyle(
-                                color: Colors.black26,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w800,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
+                  SelectGenderWidget(
+                    isMale: true,
+                    isSelected: _gender == 1,  // false value passing
+                    selectGender: (bool male) {
+                      _gender = male ? 1 : 2 ;
+                      setState(() {});
+                      print(_gender);
+                    },
                   ),
 
                   SizedBox(width: 15),
 
                   // Female Container
-                  Expanded(
-                    child: InkWell(
-                      onTap: () {
-                        _gender = 2;
-                        setState(() {});
-                      },
-                      child: Container(
-                        height: MediaQuery.of(context).size.height * 0.20,
-                        width: MediaQuery.of(context).size.width * 0.10,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-
-                          // color condition for gender
-                          color:
-                              _gender == 2 ? Colors.white : Colors.yellowAccent,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.female,
-                              size: 100,
-                              color: Colors.pinkAccent,
-                            ),
-                            Text(
-                              "Female",
-                              style: TextStyle(
-                                color: Colors.black26,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w800,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
+                  SelectGenderWidget(
+                    isMale: false,
+                    isSelected: _gender == 2,   // false value passing
+                    selectGender: (bool female) {
+                      _gender = female ? 1 : 2 ;
+                      setState(() {});
+                      print(_gender);
+                    },
                   ),
                 ],
               ),
@@ -267,7 +209,9 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
               ),
 
               // Result
-              CalculatedBmi(calculatedBmi: _calculatedBmi),
+              CalculatedBmi(
+                  calculatedBmi: _calculatedBmi
+              ),
             ],
           ),
         ),
