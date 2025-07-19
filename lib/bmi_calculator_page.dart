@@ -15,7 +15,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
   double _height = 55;
   int _weight = 64;
   int _age = 21;
-  int _gender = 0 ;
+  int _gender = 0;
 
   double _calculatedBmi = 0.0;
 
@@ -204,9 +204,12 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                 children: [
                   /// Weight Section
                   WeightAgeWidget(
-                    label: 'WEIGHT (in Kg)',    // this string assign to child class label means pass value from parent class to child class
-                    weightAgeChanged: (int weight) {   // this method get value from child class
-                      _weight = weight ;    // weight value assign to parent class private member "_weight"
+                    label: 'WEIGHT (in Kg)',
+                    // this string assign to child class label means pass value from parent class to child class
+                    weightAgeChanged: (int weight) {
+                      // this method get value from child class
+                      _weight =
+                          weight; // weight value assign to parent class private member "_weight"
                       print("Weight : $_weight");
                     },
                   ),
@@ -215,9 +218,12 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
 
                   /// Age Section
                   WeightAgeWidget(
-                    label: 'AGE (in Years)', // this string assign to child class label means pass value from parent class to child class
-                    weightAgeChanged: (int age) {  // this method get value from child class
-                      _age = age ;  // age value assign to parent class private member "_age"
+                    label: 'AGE (in Years)',
+                    // this string assign to child class label means pass value from parent class to child class
+                    weightAgeChanged: (int age) {
+                      // this method get value from child class
+                      _age =
+                          age; // age value assign to parent class private member "_age"
                       print("Age : $_age");
                     },
                   ),
@@ -261,10 +267,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
               ),
 
               // Result
-              CalculatedBmi(
-                  calculatedBmi: _calculatedBmi,
-              ),
-
+              CalculatedBmi(calculatedBmi: _calculatedBmi),
             ],
           ),
         ),
@@ -272,4 +275,3 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
     );
   }
 }
-
