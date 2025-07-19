@@ -5,19 +5,24 @@ import 'inc_dec_button_widget.dart';
 class WeightAgeWidget extends StatefulWidget {
   const WeightAgeWidget ({
     super.key,
-    required this.label
+    required this.label,
+    required this.weightAgeChanged
   });
 
-  // to store name of weight and age
+  // variable to set value from parent class to child class
   final String label;
+
+  // method to return value from child to parent class
+  final Function(int) weightAgeChanged ;
 
   @override
   State<WeightAgeWidget> createState() => _WeightAgeWidgetState();
 }
 
 class _WeightAgeWidgetState extends State<WeightAgeWidget> {
-  // to get the value of _weight
-  int _weight = 0;
+
+  // to get the value of _weight and _age
+  int _weight_Age = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +41,7 @@ class _WeightAgeWidgetState extends State<WeightAgeWidget> {
               style: TextStyle(fontSize: 18, color: Colors.black26),
             ),
             Text(
-              _weight.toString(),
+              _weight_Age.toString(),
               style: TextStyle(fontSize: 50, fontWeight: FontWeight.w400),
             ),
             // row for increment and decrement buttons
@@ -56,9 +61,10 @@ class _WeightAgeWidgetState extends State<WeightAgeWidget> {
                   IncDecButtonWidget(
                     isIncrement: true,
                     onClick: () {
-                      print("Weight Increase");
-                      _weight = _weight + 1;
-                      setState(() {});
+                      print("WeightAge Increase");
+                      _weight_Age = _weight_Age + 1;  // it increase weight and age to 1 when user click
+                      setState(() {});   // it rebuild widgets
+                      widget.weightAgeChanged(_weight_Age);   // this method return weight to parent class when the value set
                     },
                   ),
                 ),
@@ -76,9 +82,10 @@ class _WeightAgeWidgetState extends State<WeightAgeWidget> {
                   IncDecButtonWidget(
                     isIncrement: false,
                     onClick: () {
-                      print("Weight Decrease");
-                      _weight = _weight - 1;
+                      print("WeightAge Decrease");
+                      _weight_Age = _weight_Age - 1;   // // it decrease weight and age to 1 when user click
                       setState(() {});
+                      widget.weightAgeChanged(_weight_Age);   // this method return weight to parent class when the value set
                     },
                   ),
                 ),

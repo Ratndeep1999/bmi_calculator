@@ -204,14 +204,22 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                 children: [
                   /// Weight Section
                   WeightAgeWidget(
-                    label: 'WEIGHT (in Kg)',
+                    label: 'WEIGHT (in Kg)',    // this string assign to child class label means pass value from parent class to child class
+                    weightAgeChanged: (int weight) {   // this method get value from child class
+                      _weight = weight ;    // weight value assign to parent class private member "_weight"
+                      print("Weight : $_weight");
+                    },
                   ),
 
                   SizedBox(width: 15),
 
                   /// Age Section
                   WeightAgeWidget(
-                    label: 'AGE (in Years)',
+                    label: 'AGE (in Years)', // this string assign to child class label means pass value from parent class to child class
+                    weightAgeChanged: (int age) {  // this method get value from child class
+                      _age = age ;  // age value assign to parent class private member "_age"
+                      print("Age : $_age");
+                    },
                   ),
                 ],
               ),
