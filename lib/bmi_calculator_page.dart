@@ -203,7 +203,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
               Row(
                 children: [
                   /// Weight Section
-                  WeightAgeWidget(),
+                  WeightAgeWidget(label: 'WEIGHT (in Kg)',),
 
                   SizedBox(width: 15),
 

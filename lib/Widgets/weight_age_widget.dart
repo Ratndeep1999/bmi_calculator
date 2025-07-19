@@ -1,21 +1,23 @@
-
-
 import 'package:flutter/material.dart';
 
 import 'inc_dec_button_widget.dart';
 
 class WeightAgeWidget extends StatefulWidget {
-  const WeightAgeWidget({super.key});
+  const WeightAgeWidget ({
+    super.key,
+    required this.label
+  });
+
+  // to store name of weight and age
+  final String label;
 
   @override
   State<WeightAgeWidget> createState() => _WeightAgeWidgetState();
 }
 
 class _WeightAgeWidgetState extends State<WeightAgeWidget> {
-
   // to get the value of _weight
-  int _weight = 0 ;
-
+  int _weight = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -29,19 +31,13 @@ class _WeightAgeWidgetState extends State<WeightAgeWidget> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              "WEIGHT (in Kg)",
-              style: TextStyle(
-                fontSize: 18,
-                color: Colors.black26,
-              ),
+             Text(
+              widget.label,
+              style: TextStyle(fontSize: 18, color: Colors.black26),
             ),
             Text(
               _weight.toString(),
-              style: TextStyle(
-                fontSize: 50,
-                fontWeight: FontWeight.w400,
-              ),
+              style: TextStyle(fontSize: 50, fontWeight: FontWeight.w400),
             ),
             // row for increment and decrement buttons
             Row(
@@ -49,8 +45,7 @@ class _WeightAgeWidgetState extends State<WeightAgeWidget> {
               children: [
                 // Increment button
                 Container(
-                  height:
-                  MediaQuery.of(context).size.height * 0.06,
+                  height: MediaQuery.of(context).size.height * 0.06,
                   width: MediaQuery.of(context).size.width * 0.12,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
@@ -70,8 +65,7 @@ class _WeightAgeWidgetState extends State<WeightAgeWidget> {
 
                 // Decrement button
                 Container(
-                  height:
-                  MediaQuery.of(context).size.height * 0.06,
+                  height: MediaQuery.of(context).size.height * 0.06,
                   width: MediaQuery.of(context).size.width * 0.12,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
