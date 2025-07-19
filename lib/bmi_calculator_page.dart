@@ -1,6 +1,8 @@
 import 'package:bmi_calculator/Widgets/inc_dec_button_widget.dart';
 import 'package:flutter/material.dart';
 
+import 'Widgets/calculated_bmi_result_widget.dart';
+
 class BmiCalculatorPage extends StatefulWidget {
   const BmiCalculatorPage({super.key});
 
@@ -278,7 +280,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
 
                   SizedBox(width: 15),
 
-                  // Age Section
+                  /// Age Section
                   Expanded(
                     child: Container(
                       height: MediaQuery.of(context).size.height * 0.25,
@@ -395,20 +397,10 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
               ),
 
               // Result
-              Container(
-                height: MediaQuery.of(context).size.height * 0.07,
-                width: MediaQuery.of(context).size.width * 0.6,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.yellowAccent,
-                ),
-                child: Center(
-                  child: Text(
-                    _calculatedBmi.toStringAsFixed(2),
-                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.w400),
-                  ),
-                ),
+              CalculatedBmi(
+                  calculatedBmi: _calculatedBmi,
               ),
+
             ],
           ),
         ),
@@ -416,3 +408,4 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
     );
   }
 }
+
