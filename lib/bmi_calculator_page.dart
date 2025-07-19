@@ -34,7 +34,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
         leading: Icon(Icons.menu),
         centerTitle: true,
         title: Text("BMI Calculator", style: TextStyle()),
-        backgroundColor: Colors.orange.shade100,
+        backgroundColor: Colors.yellowAccent,
       ),
       body: SafeArea(
         child: Padding(
@@ -69,7 +69,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                             Icon(
                               Icons.male,
                               size: 100,
-                              color: Colors.blue.shade500,
+                              color: Colors.blueAccent,
                             ),
                             Text(
                               "Male",
@@ -110,7 +110,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                             Icon(
                               Icons.female,
                               size: 100,
-                              color: Colors.blue.shade500,
+                              color: Colors.pinkAccent,
                             ),
                             Text(
                               "Female",
