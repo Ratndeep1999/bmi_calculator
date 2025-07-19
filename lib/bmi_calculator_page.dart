@@ -203,86 +203,15 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
               Row(
                 children: [
                   /// Weight Section
-                  WeightAgeWidget(label: 'WEIGHT (in Kg)',),
+                  WeightAgeWidget(
+                    label: 'WEIGHT (in Kg)',
+                  ),
 
                   SizedBox(width: 15),
 
                   /// Age Section
-                  Expanded(
-                    child: Container(
-                      height: MediaQuery.of(context).size.height * 0.25,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.yellowAccent,
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text(
-                            "AGE (in Years)",
-                            style: TextStyle(
-                              fontSize: 18,
-                              color: Colors.black26,
-                            ),
-                          ),
-                          Text(
-                            _age.toString(),
-                            style: TextStyle(
-                              fontSize: 50,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-
-                          // row for increment and decrement buttons
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              // Increment button
-                              Container(
-                                height:
-                                    MediaQuery.of(context).size.height * 0.06,
-                                width: MediaQuery.of(context).size.width * 0.12,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(50),
-                                  color: Colors.white,
-                                ),
-                                child:
-                                /// Age Increment
-                                IncDecButtonWidget(
-                                  isIncrement: true,
-                                  onClick: () {
-                                    print("Age Increase");
-                                    _age++;
-                                    setState(() {});
-                                  },
-                                ),
-                              ),
-
-                              // Decrement button
-                              Container(
-                                height:
-                                    MediaQuery.of(context).size.height * 0.06,
-                                width: MediaQuery.of(context).size.width * 0.12,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(50),
-                                  color: Colors.white,
-                                ),
-                                child:
-                                /// Age Decrement
-                                IncDecButtonWidget(
-                                  isIncrement: false,
-                                  onClick: () {
-                                    print("Age Decrease");
-                                    _age--;
-                                    setState(() {});
-                                  },
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                  WeightAgeWidget(
+                    label: 'AGE (in Years)',
                   ),
                 ],
               ),
