@@ -1,4 +1,5 @@
 import 'package:bmi_calculator/Widgets/inc_dec_button_widget.dart';
+import 'package:bmi_calculator/Widgets/weight_age_widget.dart';
 import 'package:flutter/material.dart';
 
 import 'Widgets/calculated_bmi_result_widget.dart';
@@ -202,81 +203,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
               Row(
                 children: [
                   /// Weight Section
-                  Expanded(
-                    child: Container(
-                      height: MediaQuery.of(context).size.height * 0.25,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.yellowAccent,
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text(
-                            "WEIGHT (in Kg)",
-                            style: TextStyle(
-                              fontSize: 18,
-                              color: Colors.black26,
-                            ),
-                          ),
-                          Text(
-                            _weight.toString(),
-                            style: TextStyle(
-                              fontSize: 50,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                          // row for increment and decrement buttons
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              // Increment button
-                              Container(
-                                height:
-                                    MediaQuery.of(context).size.height * 0.06,
-                                width: MediaQuery.of(context).size.width * 0.12,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(50),
-                                  color: Colors.white,
-                                ),
-                                child:
-                                /// Weight Increment
-                                IncDecButtonWidget(
-                                  isIncrement: true,
-                                  onClick: () {
-                                    print("Weight Increase");
-                                    _weight = _weight + 1;
-                                    setState(() {});
-                                  },
-                                ),
-                              ),
-
-                              // Decrement button
-                              Container(
-                                height:
-                                    MediaQuery.of(context).size.height * 0.06,
-                                width: MediaQuery.of(context).size.width * 0.12,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(50),
-                                  color: Colors.white,
-                                ),
-                                child:
-                                /// Weight decrement
-                                IncDecButtonWidget(
-                                  isIncrement: false,
-                                  onClick: () {
-                                    print("Weight Decrease");
-                                    _weight = _weight - 1;
-                                    setState(() {});
-                                  },
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  WeightAgeWidget(),
 
                   SizedBox(width: 15),
 
