@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 
 class CalculatedBmi extends StatefulWidget {
-  const CalculatedBmi({super.key, required this.bmi});
+  const CalculatedBmi({
+    super.key,
+    required this.bmi,
+    required this.isMale
+  });
 
   final double bmi;
+  final int isMale ;
 
   @override
   State<CalculatedBmi> createState() => _CalculatedBmiState();
@@ -37,37 +42,43 @@ class _CalculatedBmiState extends State<CalculatedBmi> {
     switch( _category ) {
       case 'Underweight' :
         _healthRisk = 'Malnutrition, weakness';
-        _suggestions ='';
+        _suggestions = widget.isMale == 1
+            ? "Eat protein-rich food, gain muscle through training."
+            : "Add healthy fats, frequent meals, and yoga.";
         _color = Color(0xFF03A9F4);
         break ;
 
       case 'Normal Weight' :
         _healthRisk = 'Low health risk';
-        _suggestions ='';
+        _suggestions ='Maintain a healthy lifestyle and regular activity.';
         _color = Color(0xFF4CAF50);
         break ;
 
       case 'Overweight' :
         _healthRisk = 'Moderate risk of heart disease, diabetes';
-        _suggestions ='';
+        _suggestions = widget.isMale == 1
+            ? "Reduce red meat, focus on cardio & strength training."
+            : "Avoid sugary snacks, walk daily, hydrate well.";;
         _color = Color(0xFFFFC107);
         break ;
 
       case 'Obesity Class I' :
         _healthRisk = 'High risk of cardiovascular disease';
-        _suggestions ='';
+        _suggestions = widget.isMale == 1
+            ? "Limit carbs, exercise regularly, monitor sugar."
+            : "Daily light cardio, portion control, consult dietician.";
         _color = Color(0xFFFF9800);
         break ;
 
       case 'Obesity Class II' :
         _healthRisk = 'Very high health risks';
-        _suggestions ='';
+        _suggestions ="Strict diet plan, consult doctor, monitor health.";
         _color = Color(0xFFF44336);
         break ;
 
       case 'Obesity Class III' :
         _healthRisk = 'Extremely high health risks';
-        _suggestions ='';
+        _suggestions ="Seek medical advice and structured weight-loss plan.";
         _color = Color(0xFFD32F2F);
         break ;
     }

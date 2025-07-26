@@ -140,7 +140,9 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                   // It navigate to result page
                   Navigator.push( context,
                     MaterialPageRoute(
-                    builder: (context) => CalculatedBmi(bmi: _calculatedBmi,),
+                    builder: (context) => CalculatedBmi(
+                      bmi: _calculatedBmi, isMale: _gender,
+                    ),
                     ),
                   );
                 },
