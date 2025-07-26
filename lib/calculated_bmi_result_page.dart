@@ -135,7 +135,7 @@ class _CalculatedBmiState extends State<CalculatedBmi> {
 
                     // Health risk
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 60),
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
                       child: Column(
                         children: [
                           Text(
@@ -166,7 +166,7 @@ class _CalculatedBmiState extends State<CalculatedBmi> {
               SizedBox(height: MediaQuery.of(context).size.height * 0.02), // 15
               /// Suggestions Section
               Container(
-                height: MediaQuery.of(context).size.height * 0.28,
+                height: MediaQuery.of(context).size.height * 0.15,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
@@ -177,7 +177,10 @@ class _CalculatedBmiState extends State<CalculatedBmi> {
                     children: [
                       Text(
                         widget.isMale == 1 ? 'Male' : 'Female',
-                        style: TextStyle(),
+                        style: TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500
+                        ),
                       ),
                       Text(
                         _suggestions,
