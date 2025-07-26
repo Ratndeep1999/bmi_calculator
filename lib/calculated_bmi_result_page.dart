@@ -36,9 +36,39 @@ class _CalculatedBmiState extends State<CalculatedBmi> {
     //
     switch( _category ) {
       case 'Underweight' :
-        _healthRisk = '';
+        _healthRisk = 'Malnutrition, weakness';
         _suggestions ='';
-        _color = Colors.black;
+        _color = Color(0xFF03A9F4);
+        break ;
+
+      case 'Normal Weight' :
+        _healthRisk = 'Low health risk';
+        _suggestions ='';
+        _color = Color(0xFF4CAF50);
+        break ;
+
+      case 'Overweight' :
+        _healthRisk = 'Moderate risk of heart disease, diabetes';
+        _suggestions ='';
+        _color = Color(0xFFFFC107);
+        break ;
+
+      case 'Obesity Class I' :
+        _healthRisk = 'High risk of cardiovascular disease';
+        _suggestions ='';
+        _color = Color(0xFFFF9800);
+        break ;
+
+      case 'Obesity Class II' :
+        _healthRisk = 'Very high health risks';
+        _suggestions ='';
+        _color = Color(0xFFF44336);
+        break ;
+
+      case 'Obesity Class III' :
+        _healthRisk = 'Extremely high health risks';
+        _suggestions ='';
+        _color = Color(0xFFD32F2F);
         break ;
     }
 
