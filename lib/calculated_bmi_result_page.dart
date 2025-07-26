@@ -10,11 +10,9 @@ class CalculatedBmi extends StatefulWidget {
 }
 
 class _CalculatedBmiState extends State<CalculatedBmi> {
-  String _healthRisk = '';
-
-  String _category = '';
-
-  String _suggestions = '';
+  final String _healthRisk = '';
+  final String _category = '';
+  final String _suggestions = '';
 
   @override
   Widget build(BuildContext context) {
