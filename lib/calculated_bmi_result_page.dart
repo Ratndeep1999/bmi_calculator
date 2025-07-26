@@ -87,7 +87,7 @@ class _CalculatedBmiState extends State<CalculatedBmi> {
       appBar: AppBar(
         title: Text("Calculated BMI"),
         centerTitle: true,
-        backgroundColor: Colors.orange[100],
+        backgroundColor: Colors.yellowAccent,
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 20),

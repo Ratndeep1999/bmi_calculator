@@ -147,8 +147,8 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                   );
                 },
                 child: Container(
-                  height: MediaQuery.of(context).size.height * 0.07,
-                  width: MediaQuery.of(context).size.width * 0.6,
+                  height: MediaQuery.of(context).size.height * 0.06,
+                  width: double.infinity,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: Colors.yellowAccent,
