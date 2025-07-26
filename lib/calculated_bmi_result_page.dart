@@ -62,60 +62,12 @@ class _CalculatedBmiState extends State<CalculatedBmi> {
                       ),
                     ),
 
-                    // Category
-                    Text(
-                      'Obesity Class III',
-                      style: TextStyle(
-                        color: Colors.red,
-                          fontSize: 36,
-                          fontWeight: FontWeight.w500
-                      ),
-                    ),
 
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 60),
-                      child: Column(
-                        children: [
-                          const Text(
-                              "Health Risk",
-                              style: TextStyle(
-                                  fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: 2.0
-                              ),
-                              textAlign: TextAlign.center
-                          ),
-                          // Health Risk
-                          Text(
-                            'Moderate risk of heart disease, diabetes',
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w400
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
                   ],
                 ),
               ),
 
               SizedBox( height: MediaQuery.of(context).size.height * 0.02 ),  // 15
-
-              // Suggestions Section
-              Container(
-                height: MediaQuery.of(context).size.height * 0.28,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.yellowAccent,
-                ),
-                child: Center(
-                  child: Text (
-                    'Increase physical activity (30–45 min/day)'
-                  ),
-                ),
-              ),
 
               SizedBox( height: MediaQuery.of(context).size.height * 0.02 ),  // 15
 
