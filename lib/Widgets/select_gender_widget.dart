@@ -6,7 +6,6 @@ class SelectGenderWidget extends StatefulWidget {
     required this.isMale,
     required this.selectGender,
     required this.isSelected,
-
   });
 
   //
@@ -17,7 +16,6 @@ class SelectGenderWidget extends StatefulWidget {
 
   //
   final bool isSelected ;
-
 
 
   @override
@@ -39,7 +37,6 @@ class _SelectGenderWidgetState extends State<SelectGenderWidget> {
           width: MediaQuery.of(context).size.width * 0.10,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-
             // color condition for gender
             color: widget.isSelected ?  Colors.white : Colors.yellowAccent ,
           ),

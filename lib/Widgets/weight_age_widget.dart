@@ -22,7 +22,7 @@ class WeightAgeWidget extends StatefulWidget {
 class _WeightAgeWidgetState extends State<WeightAgeWidget> {
 
   // to get the value of _weight and _age
-  int _weight_Age = 0;
+  int _weight_Age = 30;
 
   @override
   Widget build(BuildContext context) {

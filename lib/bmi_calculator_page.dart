@@ -8,9 +8,15 @@ class BmiCalculatorPage extends StatefulWidget {
   const BmiCalculatorPage({super.key});
 
   @override
-  State<BmiCalculatorPage> createState() => _BmiCalculatorPageState();
+  State<BmiCalculatorPage> createState() => _BmiCalculatorPageState();     //   setState() method calls this method
+  // State createState() => _BmiCalculatorPageState();  // i can write this also
+  // State createState() {                              // even i can write this also
+  //   return _BmiCalculatorPageState();
+  // }
+
 }
 
+// class _BmiCalculatorPageState extends State {      // even i can also write like this
 class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
   double _height = 55;
   int _weight = 64;
@@ -19,7 +25,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
   double _calculatedBmi = 0.0;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) {   // build method which return type is widget
     return Scaffold(
       backgroundColor: Colors.yellow[100],
       appBar: AppBar(
@@ -50,11 +56,11 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                 children: [
                   // Male container
                   SelectGenderWidget(
-                    isMale: true,
+                    isMale: true,  // value passing from parent to child class
                     isSelected: _gender == 1,  // false value passing
-                    selectGender: (bool male) {
+                    selectGender: (bool male) {  //  it initialize only when the method call from child class
                       _gender = male ? 1 : 2 ;
-                      setState(() {});
+                      setState(() {});   // it trigger createState() method to return / rebuild entire UI
                       print(_gender);
                     },
                   ),
@@ -124,15 +130,14 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
               // Calculate Button
               InkWell(
                 onTap: () {
-                  setState(() {
-                    // cm to meter
-                    double heightInMeter = _height / 100;
-                    // calculate bmi
-                    if (_weight > 0.00 && _age > 0) {
-                      _calculatedBmi =
-                          _weight / (heightInMeter * heightInMeter);
-                    }
-                  });
+                  // cm to meter
+                  double heightInMeter = _height / 100;
+                  // calculate bmi
+                  if (_weight > 0.00 && _age > 0) {
+                    _calculatedBmi =
+                        _weight / (heightInMeter * heightInMeter);
+                  }
+                  setState(() { });
                 },
                 child: Container(
                   height: MediaQuery.of(context).size.height * 0.07,
@@ -158,6 +163,8 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
               CalculatedBmi(
                   calculatedBmi: _calculatedBmi
               ),
+
+              // Container()
             ],
           ),
         ),

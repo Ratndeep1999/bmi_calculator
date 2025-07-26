@@ -79,7 +79,7 @@ class _HeightWidgetState extends State<HeightWidget> {
 
               _height = value ;
               widget.heightChanged(_height);
-              setState(() {});
+              setState(() {  });
 
             },
           ),
