@@ -40,71 +40,71 @@ class _CalculatedBmiState extends State<CalculatedBmi> {
             children: [
               SizedBox( height: MediaQuery.of(context).size.height * 0.02 ),  // 15
 
-              // Result Section
+              /// Result Section
               Container(
-                height: MediaQuery.of(context).size.height * 0.28, // 50%
-                width: MediaQuery.of(context).size.width, // 20%
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.yellowAccent,
+            height: MediaQuery.of(context).size.height * 0.28, // 50%
+            width: MediaQuery.of(context).size.width, // 20%
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: Colors.yellowAccent,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+
+                // bmi
+                Text(
+                  widget.bmi.toStringAsFixed(4),
+                  style: TextStyle(
+                      fontSize: 28,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black45
+                  ),
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
 
-                    // bmi
-                    Text(
-                        widget.bmi.toStringAsFixed(4),
-                      style: TextStyle(
-                          fontSize: 28,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.black45
-                      ),
-                    ),
-
-                    // Category
-                    Text(
-                      'Obesity Class III',
-                      style: TextStyle(
-                        color: Colors.red,
-                          fontSize: 36,
-                          fontWeight: FontWeight.w500
-                      ),
-                    ),
-
-                    // Health risk
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 60),
-                      child: Column(
-                        children: [
-                          const Text(
-                              "Health Risk",
-                              style: TextStyle(
-                                  fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: 2.0
-                              ),
-                              textAlign: TextAlign.center
-                          ),
-                          // Health Risk
-                          Text(
-                            'Moderate risk of heart disease, diabetes',
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w400
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
+                // Category
+                Text(
+                  'Obesity Class III',
+                  style: TextStyle(
+                      color: Colors.red,
+                      fontSize: 36,
+                      fontWeight: FontWeight.w500
+                  ),
                 ),
-              ),
+
+                // Health risk
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 60),
+                  child: Column(
+                    children: [
+                      const Text(
+                          "Health Risk",
+                          style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 2.0
+                          ),
+                          textAlign: TextAlign.center
+                      ),
+                      // Health Risk
+                      Text(
+                        'Moderate risk of heart disease, diabetes',
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w400
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
 
               SizedBox( height: MediaQuery.of(context).size.height * 0.02 ),  // 15
 
-              // Suggestions Section
+              /// Suggestions Section
               Container(
                 height: MediaQuery.of(context).size.height * 0.28,
                 width: MediaQuery.of(context).size.width,
