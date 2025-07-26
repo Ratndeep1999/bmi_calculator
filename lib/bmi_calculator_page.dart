@@ -1,8 +1,8 @@
 import 'package:bmi_calculator/Widgets/height_widget.dart';
 import 'package:bmi_calculator/Widgets/select_gender_widget.dart';
 import 'package:bmi_calculator/Widgets/weight_age_widget.dart';
+import 'package:bmi_calculator/calculated_bmi_result_page.dart';
 import 'package:flutter/material.dart';
-import 'Widgets/calculated_bmi_result_widget.dart';
 
 class BmiCalculatorPage extends StatefulWidget {
   const BmiCalculatorPage({super.key});
@@ -27,7 +27,6 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
   @override
   Widget build(BuildContext context) {   // build method which return type is widget
     return Scaffold(
-      backgroundColor: Colors.yellow[100],
       appBar: AppBar(
         actions: [
           Padding(
@@ -50,7 +49,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
           padding: EdgeInsets.symmetric(horizontal: 15),
           child: Column(
             children: [
-              SizedBox(height: 15),
+              SizedBox( height: MediaQuery.of(context).size.height * 0.04 ),
               // Gender Section
               Row(
                 children: [
@@ -61,11 +60,11 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                     selectGender: (bool male) {  //  it initialize only when the method call from child class
                       _gender = male ? 1 : 2 ;
                       setState(() {});   // it trigger createState() method to return / rebuild entire UI
-                      print(_gender);
+                      debugPrint(_gender.toString());
                     },
                   ),
 
-                  SizedBox(width: 15),
+                  SizedBox( width: MediaQuery.of(context).size.width * 0.04 ),
 
                   // Female Container
                   SelectGenderWidget(
@@ -74,24 +73,24 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                     selectGender: (bool female) {
                       _gender = female ? 1 : 2 ;
                       setState(() {});
-                      print(_gender);
+                      debugPrint(_gender.toString());
                     },
                   ),
                 ],
               ),
 
-              SizedBox(height: 20),
+              SizedBox( height: MediaQuery.of(context).size.height * 0.03 ),
 
               // Height Section
               HeightWidget(
                 // value directly assign to _height which get from child class
                 heightChanged: (double height) {
                   _height = height ;
-                  print("Changed Height : $_height");
+                  debugPrint("Changed Height : $_height");
                 },
               ),
 
-              SizedBox(height: 20),
+              SizedBox( height: MediaQuery.of(context).size.height * 0.03 ),
 
               // Row for Weight and Age
               Row(
@@ -104,11 +103,11 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                       // this method get value from child class
                       _weight =
                           weight; // weight value assign to parent class private member "_weight"
-                      print("Weight : $_weight");
+                      debugPrint("Weight : $_weight");
                     },
                   ),
 
-                  SizedBox(width: 15),
+                  SizedBox( width: MediaQuery.of(context).size.width * 0.04 ),
 
                   /// Age Section
                   WeightAgeWidget(
@@ -118,14 +117,13 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                       // this method get value from child class
                       _age =
                           age; // age value assign to parent class private member "_age"
-                      print("Age : $_age");
+                      debugPrint("Age : $_age");
                     },
                   ),
                 ],
               ),
 
-              // SizedBox(height: 30),
-              SizedBox(height: 10),
+              SizedBox( height: MediaQuery.of(context).size.height * 0.03 ),
 
               // Calculate Button
               InkWell(
@@ -136,8 +134,15 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                   if (_weight > 0.00 && _age > 0) {
                     _calculatedBmi =
                         _weight / (heightInMeter * heightInMeter);
+                    debugPrint(_calculatedBmi.toString());
                   }
                   setState(() { });
+                  // It navigate to result page
+                  Navigator.push( context,
+                    MaterialPageRoute(
+                    builder: (context) => CalculatedBmi(calculatedBmi: _calculatedBmi,),
+                    ),
+                  );
                 },
                 child: Container(
                   height: MediaQuery.of(context).size.height * 0.07,
@@ -159,12 +164,6 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
                 ),
               ),
 
-              // Result
-              CalculatedBmi(
-                  calculatedBmi: _calculatedBmi
-              ),
-
-              // Container()
             ],
           ),
         ),

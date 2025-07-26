@@ -22,7 +22,7 @@ class WeightAgeWidget extends StatefulWidget {
 class _WeightAgeWidgetState extends State<WeightAgeWidget> {
 
   // to get the value of _weight and _age
-  int _weight_Age = 30;
+  int _weight_Age = 30 ;
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +61,7 @@ class _WeightAgeWidgetState extends State<WeightAgeWidget> {
                   IncDecButtonWidget(
                     isIncrement: true,
                     onClick: () {
-                      print("WeightAge Increase");
+                      debugPrint("WeightAge Increase");
                       _weight_Age = _weight_Age + 1;  // it increase weight and age to 1 when user click
                       setState(() {});   // it rebuild widgets
                       widget.weightAgeChanged(_weight_Age);   // this method return weight to parent class when the value set
@@ -82,7 +82,7 @@ class _WeightAgeWidgetState extends State<WeightAgeWidget> {
                   IncDecButtonWidget(
                     isIncrement: false,
                     onClick: () {
-                      print("WeightAge Decrease");
+                      debugPrint("WeightAge Decrease");
                       _weight_Age = _weight_Age - 1;   // it decrease weight and age to 1 when user click
                       setState(() {});
                       widget.weightAgeChanged(_weight_Age);   // this method return weight to parent class when the value set
