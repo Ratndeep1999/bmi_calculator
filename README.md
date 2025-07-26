@@ -15,4 +15,4 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-![Front Page](C:\Users\Ratndeep\Downloads\bmi_calculator\lib\Assets\Screenshot_20250727_003410.png)
+![Front Page](lib\Assets\Screenshot_20250727_003410.png)
