@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 class CalculatedBmi extends StatefulWidget {
   const CalculatedBmi({
     super.key,
-    required this.calculatedBmi,
+    required this.bmi,
   });
 
-  final double calculatedBmi ;
+  final double bmi ;
 
   @override
   State<CalculatedBmi> createState() => _CalculatedBmiState();
@@ -55,7 +55,7 @@ class _CalculatedBmiState extends State<CalculatedBmi> {
 
                     // bmi
                     Text(
-                        widget.calculatedBmi.toStringAsFixed(4),
+                        widget.bmi.toStringAsFixed(4),
                       style: TextStyle(
                           fontSize: 28,
                           fontWeight: FontWeight.w500,
