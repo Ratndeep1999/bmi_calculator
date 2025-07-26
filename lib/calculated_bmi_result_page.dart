@@ -1,7 +1,22 @@
 import 'package:flutter/material.dart';
 
-class CalculatedBmi extends StatelessWidget {
-  const CalculatedBmi({super.key});
+class CalculatedBmi extends StatefulWidget {
+  const CalculatedBmi({
+    super.key,
+    required this.calculatedBmi,
+  });
+
+  final double calculatedBmi ;
+
+  @override
+  State<CalculatedBmi> createState() => _CalculatedBmiState();
+}
+
+class _CalculatedBmiState extends State<CalculatedBmi> {
+
+  String _healthRisk = '' ;
+  String _category = '' ;
+  String _suggestions = '' ;
 
   @override
   Widget build(BuildContext context) {
@@ -19,37 +34,73 @@ class CalculatedBmi extends StatelessWidget {
       ),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: [
-              SizedBox(height: 20),
+              SizedBox( height: MediaQuery.of(context).size.height * 0.02 ),  // 15
 
               // Result Section
               Container(
-                height: MediaQuery.of(context).size.height * 0.43, // 50%
+                height: MediaQuery.of(context).size.height * 0.28, // 50%
                 width: MediaQuery.of(context).size.width, // 20%
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: Colors.yellowAccent,
                 ),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    SizedBox(height: 20),
 
-                    const Text(
-                      "Your BMI is",
+                    // bmi
+                    Text(
+                        widget.calculatedBmi.toStringAsFixed(4),
                       style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 40,
-                        color: Colors.black26,
+                          fontSize: 28,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black45
                       ),
                     ),
-                    Text("0.0")
+
+                    // Category
+                    Text(
+                      'Obesity Class III',
+                      style: TextStyle(
+                        color: Colors.red,
+                          fontSize: 36,
+                          fontWeight: FontWeight.w500
+                      ),
+                    ),
+
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 60),
+                      child: Column(
+                        children: [
+                          const Text(
+                              "Health Risk",
+                              style: TextStyle(
+                                  fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                letterSpacing: 2.0
+                              ),
+                              textAlign: TextAlign.center
+                          ),
+                          // Health Risk
+                          Text(
+                            'Moderate risk of heart disease, diabetes',
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w400
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
 
-              SizedBox(height: 20),
+              SizedBox( height: MediaQuery.of(context).size.height * 0.02 ),  // 15
 
               // Suggestions Section
               Container(
@@ -59,13 +110,20 @@ class CalculatedBmi extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                   color: Colors.yellowAccent,
                 ),
+                child: Center(
+                  child: Text (
+                    'Increase physical activity (30–45 min/day)'
+                  ),
+                ),
               ),
 
-              SizedBox(height: 20),
+              SizedBox( height: MediaQuery.of(context).size.height * 0.02 ),  // 15
 
               // Recalculate button
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pop(context);
+                },
                 child: Container(
                   height: MediaQuery.of(context).size.height * 0.07,
                   width: MediaQuery.of(context).size.width * 0.6,
