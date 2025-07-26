@@ -204,8 +204,9 @@ class _CalculatedBmiState extends State<CalculatedBmi> {
                   Navigator.pop(context);
                 },
                 child: Container(
-                  height: MediaQuery.of(context).size.height * 0.07,
-                  width: MediaQuery.of(context).size.width * 0.6,
+                  height: MediaQuery.of(context).size.height * 0.06,
+                  width: double.infinity,
+                  // MediaQuery.of(context).size.width * 0.6,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: Colors.yellowAccent,
@@ -214,7 +215,7 @@ class _CalculatedBmiState extends State<CalculatedBmi> {
                     child: Text(
                       "Recalculate",
                       style: TextStyle(
-                        color: Colors.black26,
+                        color: Colors.black45,
                         fontSize: 25,
                         fontWeight: FontWeight.w400,
                       ),
