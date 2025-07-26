@@ -18,6 +18,7 @@ class _CalculatedBmiState extends State<CalculatedBmi> {
   String _category = '' ;
   String _suggestions = '' ;
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
