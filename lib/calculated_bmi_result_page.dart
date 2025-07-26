@@ -62,6 +62,16 @@ class _CalculatedBmiState extends State<CalculatedBmi> {
                       ),
                     ),
 
+                    // Category
+                    Text(
+                      'Obesity Class III',
+                      style: TextStyle(
+                        color: Colors.red,
+                          fontSize: 36,
+                          fontWeight: FontWeight.w500
+                      ),
+                    ),
+
 
                   ],
                 ),
