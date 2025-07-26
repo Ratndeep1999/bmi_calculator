@@ -16,3 +16,4 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 ![First Page](lib/assets/images/first_page.png)
+![Second Page](lib/assets/images/second_page.png)
