@@ -135,7 +135,7 @@ class _CalculatedBmiState extends State<CalculatedBmi> {
 
                     // Health risk
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      padding: const EdgeInsets.symmetric(horizontal: 30),
                       child: Column(
                         children: [
                           Text(
@@ -150,6 +150,7 @@ class _CalculatedBmiState extends State<CalculatedBmi> {
                           // Health Risk
                           Text(
                             _healthRisk,
+                            textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.w400,
@@ -172,21 +173,27 @@ class _CalculatedBmiState extends State<CalculatedBmi> {
                   borderRadius: BorderRadius.circular(20),
                   color: Colors.yellowAccent,
                 ),
-                child: Center(
-                  child: Column(
-                    children: [
-                      Text(
-                        widget.isMale == 1 ? 'Male' : 'Female',
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      widget.isMale == 1 ? 'Male' : 'Female',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 40),
+                      child: Text(
+                        _suggestions,
+                        textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.w500
+                          fontSize: 20,
                         ),
                       ),
-                      Text(
-                        _suggestions,
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
 
