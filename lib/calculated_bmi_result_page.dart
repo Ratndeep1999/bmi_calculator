@@ -33,7 +33,7 @@ class _CalculatedBmiState extends State<CalculatedBmi> {
       _category = 'Obesity Class III' ;
     }
 
-    //
+    // to assign values at once
     switch( _category ) {
       case 'Underweight' :
         _healthRisk = 'Malnutrition, weakness';
