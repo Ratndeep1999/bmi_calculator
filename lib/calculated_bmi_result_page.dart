@@ -173,8 +173,16 @@ class _CalculatedBmiState extends State<CalculatedBmi> {
                   color: Colors.yellowAccent,
                 ),
                 child: Center(
-                  child: Text(
-                    _suggestions,
+                  child: Column(
+                    children: [
+                      Text(
+                        widget.isMale == 1 ? 'Male' : 'Female',
+                        style: TextStyle(),
+                      ),
+                      Text(
+                        _suggestions,
+                      ),
+                    ],
                   ),
                 ),
               ),
