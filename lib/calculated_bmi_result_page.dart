@@ -104,6 +104,21 @@ class _CalculatedBmiState extends State<CalculatedBmi> {
 
               SizedBox( height: MediaQuery.of(context).size.height * 0.02 ),  // 15
 
+              // Suggestions Section
+              Container(
+                height: MediaQuery.of(context).size.height * 0.28,
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.yellowAccent,
+                ),
+                child: Center(
+                  child: Text (
+                      'Increase physical activity (30–45 min/day)'
+                  ),
+                ),
+              ),
+
               SizedBox( height: MediaQuery.of(context).size.height * 0.02 ),  // 15
 
               // Recalculate button
