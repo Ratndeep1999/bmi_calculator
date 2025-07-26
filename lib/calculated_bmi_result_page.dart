@@ -127,7 +127,7 @@ class _CalculatedBmiState extends State<CalculatedBmi> {
                     Text(
                       _category,
                       style: TextStyle(
-                        color: Colors.red,
+                        color: _color,
                         fontSize: 36,
                         fontWeight: FontWeight.w500,
                       ),
@@ -153,6 +153,7 @@ class _CalculatedBmiState extends State<CalculatedBmi> {
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.w400,
+                              color: _color
                             ),
                           ),
                         ],
