@@ -10,12 +10,32 @@ class CalculatedBmi extends StatefulWidget {
 }
 
 class _CalculatedBmiState extends State<CalculatedBmi> {
-  final String _healthRisk = '';
-  final String _category = '';
-  final String _suggestions = '';
+  String _category = '';
+  String _healthRisk = '';
+  String _suggestions = '';
+  Color _color = Colors.black26 ;
 
   @override
   Widget build(BuildContext context) {
+
+    // widget.bmi scope available only after build() method
+    if (widget.bmi < 18.5) {
+      _category = 'Underweight' ;
+    } else if (widget.bmi < 25) {
+      _category = 'Normal Weight' ;
+    } else if (widget.bmi < 30) {
+      _category = 'Overweight' ;
+    } else if (widget.bmi < 35) {
+      _category = 'Obesity Class I' ;
+    } else if (widget.bmi < 40) {
+      _category = 'Obesity Class II' ;
+    } else {
+      _category = 'Obesity Class III' ;
+    }
+
+    //
+
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Calculated BMI"),
@@ -72,7 +92,7 @@ class _CalculatedBmiState extends State<CalculatedBmi> {
                       child: Column(
                         children: [
                           Text(
-                            _healthRisk,
+                            "Health Risk",
                             style: TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
@@ -82,7 +102,7 @@ class _CalculatedBmiState extends State<CalculatedBmi> {
                           ),
                           // Health Risk
                           Text(
-                            'Moderate risk of heart disease, diabetes',
+                            _healthRisk,
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.w400,
