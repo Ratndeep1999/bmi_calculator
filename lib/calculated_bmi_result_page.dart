@@ -23,7 +23,7 @@ class _CalculatedBmiState extends State<CalculatedBmi> {
   @override
   Widget build(BuildContext context) {
 
-    // widget.bmi scope available only after build() method
+    // widget.bmi scope available only after build() method (?)
     if (widget.bmi < 18.5) {
       _category = 'Underweight' ;
     } else if (widget.bmi < 25) {
