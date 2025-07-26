@@ -72,7 +72,31 @@ class _CalculatedBmiState extends State<CalculatedBmi> {
                       ),
                     ),
 
-
+                    // Health risk
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 60),
+                      child: Column(
+                        children: [
+                          const Text(
+                              "Health Risk",
+                              style: TextStyle(
+                                  fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                letterSpacing: 2.0
+                              ),
+                              textAlign: TextAlign.center
+                          ),
+                          // Health Risk
+                          Text(
+                            'Moderate risk of heart disease, diabetes',
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w400
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
