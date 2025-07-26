@@ -34,7 +34,13 @@ class _CalculatedBmiState extends State<CalculatedBmi> {
     }
 
     //
-
+    switch( _category ) {
+      case 'Underweight' :
+        _healthRisk = '';
+        _suggestions ='';
+        _color = Colors.black;
+        break ;
+    }
 
     return Scaffold(
       appBar: AppBar(
