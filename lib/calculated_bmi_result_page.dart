@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/Widgets/suggestion_widget.dart';
 import 'package:flutter/material.dart';
 
 class CalculatedBmi extends StatefulWidget {
@@ -166,37 +167,7 @@ class _CalculatedBmiState extends State<CalculatedBmi> {
 
               SizedBox(height: MediaQuery.of(context).size.height * 0.02), // 15
               /// Suggestions Section
-              Container(
-                height: MediaQuery.of(context).size.height * 0.15,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.yellowAccent,
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      widget.isMale == 1 ? 'Male' : 'Female',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                        color: widget.isMale == 1 ? Colors.blue : Colors.pink
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 40),
-                      child: Text(
-                        _suggestions,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 20,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              SuggestionWidget(suggestions: _suggestions, isMale: widget.isMale,),
 
               SizedBox(height: MediaQuery.of(context).size.height * 0.02), // 15
               // Recalculate button
