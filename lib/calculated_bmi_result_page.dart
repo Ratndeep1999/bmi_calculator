@@ -1,4 +1,4 @@
-import 'package:bmi_calculator/Widgets/categoryHealthRiskWidget.dart';
+import 'package:bmi_calculator/Widgets/category_health_risk_widget.dart';
 import 'package:bmi_calculator/Widgets/suggestion_widget.dart';
 import 'package:flutter/material.dart';
 
