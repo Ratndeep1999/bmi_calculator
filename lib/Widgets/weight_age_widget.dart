@@ -83,8 +83,11 @@ class _WeightAgeWidgetState extends State<WeightAgeWidget> {
                     isIncrement: false,
                     onClick: () {
                       debugPrint("WeightAge Decrease");
-                      _weight_Age = _weight_Age - 1;   // it decrease weight and age to 1 when user click
-                      setState(() {});
+                      if (_weight_Age > 0) {
+                        _weight_Age = _weight_Age - 1;   // it decrease weight and age to 1 when user click
+                        setState(() {});
+                      }
+
                       widget.weightAgeChanged(_weight_Age);   // this method return weight to parent class when the value set
                     },
                   ),
