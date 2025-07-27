@@ -180,7 +180,8 @@ class _CalculatedBmiState extends State<CalculatedBmi> {
                       widget.isMale == 1 ? 'Male' : 'Female',
                       style: TextStyle(
                         fontSize: 20,
-                        fontWeight: FontWeight.w500
+                        fontWeight: FontWeight.w500,
+                        color: widget.isMale == 1 ? Colors.blue : Colors.pink
                       ),
                     ),
                     Padding(
