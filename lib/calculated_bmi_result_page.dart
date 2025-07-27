@@ -58,7 +58,7 @@ class _CalculatedBmiState extends State<CalculatedBmi> {
         _healthRisk = 'Moderate risk of heart disease, diabetes';
         _suggestions = widget.isMale == 1
             ? "Reduce red meat, focus on cardio & strength training."
-            : "Avoid sugary snacks, walk daily, hydrate well.";;
+            : "Avoid sugary snacks, walk daily, hydrate well.";
         _color = Color(0xFFFFC107);
         break ;
 
