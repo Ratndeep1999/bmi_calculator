@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/Widgets/categoryHealthRiskWidget.dart';
 import 'package:bmi_calculator/Widgets/suggestion_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -103,66 +104,11 @@ class _CalculatedBmiState extends State<CalculatedBmi> {
             children: [
               SizedBox(height: MediaQuery.of(context).size.height * 0.02), // 15
               /// Result Section
-              Container(
-                height: MediaQuery.of(context).size.height * 0.28, // 50%
-                width: MediaQuery.of(context).size.width, // 20%
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.yellowAccent,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    // bmi
-                    Text(
-                      widget.bmi.toStringAsFixed(4),
-                      style: TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black45,
-                      ),
-                    ),
-
-                    // Category
-                    Text(
-                      _category,
-                      style: TextStyle(
-                        color: _color,
-                        fontSize: 36,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-
-                    // Health risk
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 30),
-                      child: Column(
-                        children: [
-                          Text(
-                            "Health Risk",
-                            style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              letterSpacing: 2.0,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                          // Health Risk
-                          Text(
-                            _healthRisk,
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w400,
-                              color: _color
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+              CategoryHealthRiskWidget(
+                calculatedBmi: widget.bmi,
+                category: _category,
+                healthRisk: _healthRisk,
+                color: _color,
               ),
 
               SizedBox(height: MediaQuery.of(context).size.height * 0.02), // 15
